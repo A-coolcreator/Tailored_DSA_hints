@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Helper</title>
+    <link rel="stylesheet" href="popup.css">
+    <!-- Link to Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Tailored DSA hints</h1>
+
+        <div class="button-group">
+            <button id="getHintBtn" class="btn primary-btn">
+                <span class="button-text">Get Personalized Hint</span>
+                <span class="spinner" aria-hidden="true"></span>
+            </button>
+            <button id="reviewCodeBtn" class="btn secondary-btn">
+                <span class="button-text">Review My Code</span>
+                <span class="spinner" aria-hidden="true"></span>
+            </button>
+        </div>
+
+        <div class="output-area">
+            <div id="loadingMessage" class="message loading-message" style="display: none; opacity: 0;">
+                Generating response...
+            </div>
+            <div id="errorMessage" class="message error-message" style="display: none; opacity: 0;">
+                Error: Could not get response.
+            </div>
+            <div id="llmResponse" class="llm-response" style="display: none; opacity: 0;">
+                <!-- LLM response will be injected here -->
+            </div>
+            <div id="initialMessage" class="message initial-message" style="opacity: 1;">
+                Click a button to get started!
+            </div>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

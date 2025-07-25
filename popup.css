@@ -1,0 +1,237 @@
+/* popup.css */
+
+:root {
+    /* New Light Theme Color Palette (Inspired by provided image) */
+    --light-bg: #F7F7F7; /* Very light background */
+    --card-bg: #FFFFFF; /* Pure white for cards */
+    --text-dark: #2C2C2C; /* Dark text for main content */
+    --text-muted: #6A6A6A; /* Muted text for secondary info */
+    --primary-orange: #FF8C00; /* LeetCode Orange */
+    --primary-orange-dark: #CC7000; /* Darker orange for hover */
+    --button-secondary-bg: #E0E0E0; /* Light gray for secondary buttons */
+    --button-secondary-text: #4A4A4A; /* Darker text for secondary buttons */
+    --border-light: #EBEBEB; /* Light border color */
+    --shadow-light: rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    --error-red: #D9534F; /* Error messages */
+    --focus-ring: #FF8C00; /* Orange focus ring */
+
+    --background: var(--light-bg);
+    --foreground: var(--text-dark);
+    --card: var(--card-bg);
+    --card-foreground: var(--text-dark);
+    --primary: var(--primary-orange); /* Changed to orange */
+    --primary-foreground: var(--card-bg); /* White text on orange button */
+    --secondary: var(--button-secondary-bg);
+    --secondary-foreground: var(--button-secondary-text);
+    --accent: var(--primary-orange); /* Used for loading messages */
+    --accent-foreground: var(--card-bg);
+    --border: var(--border-light);
+    --input: var(--button-secondary-bg);
+    --ring: var(--focus-ring);
+    --radius: 1.2rem; /* Increased rounded corners */
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Use Inter as the primary font */
+    background-color: var(--background);
+    color: var(--foreground);
+    margin: 0;
+    padding: 0;
+    width: 420px; /* Wider popup to match the spacious feel */
+    height: auto; /* Allow height to adapt dynamically */
+    max-height: 650px; /* Max height for the popup before its own scrollbar appears */
+    min-height: 250px; /* Minimum height for the popup */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Enable scrolling for the entire popup if content exceeds max-height */
+    box-sizing: border-box;
+    border-radius: var(--radius); /* Apply border-radius to body for the outer box */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    box-shadow: 0 4px 12px var(--shadow-light); /* Subtle shadow for depth */
+    transition: height 0.3s ease-out; /* Smooth transition for popup height changes */
+}
+
+.container {
+    padding: 1.5rem; /* Increased padding for a more spacious feel */
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem; /* Consistent spacing between sections */
+    flex-grow: 1;
+    min-height: 100%;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 1.8rem; /* Larger and bolder title */
+    font-weight: 700;
+    color: var(--foreground);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+    letter-spacing: -0.03em;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 1.4rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, opacity 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    min-height: 52px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* Lighter shadow for light theme */
+}
+
+.btn:hover:not(:disabled) {
+    transform: translateY(-2px); /* Subtle lift on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+}
+
+.btn:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.primary-btn {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    border-color: var(--primary);
+}
+
+.primary-btn:hover:not(:disabled) {
+    background-color: var(--primary-orange-dark); /* Changed to orange */
+    border-color: var(--primary-orange-dark); /* Changed to orange */
+}
+
+.secondary-btn {
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+    border-color: var(--border);
+}
+
+.secondary-btn:hover:not(:disabled) {
+    background-color: color-mix(in srgb, var(--secondary) 90%, black); /* Slightly darker on hover */
+    border-color: color-mix(in srgb, var(--border) 90%, black);
+}
+
+/* Focus ring effect */
+.btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--ring), 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.output-area {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    word-wrap: break-word;
+    word-break: break-word;
+    font-size: 1rem;
+    line-height: 1.7;
+    position: relative;
+    box-sizing: border-box;
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.3s ease-in-out;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.03); /* Very subtle inner shadow */
+}
+
+/* Ensure messages and response flow naturally within output-area */
+.message, .llm-response {
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    height: auto !important;
+    top: auto !important;
+    left: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.message {
+    font-weight: 500;
+    color: var(--text-muted); /* Muted color for messages */
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-message {
+    color: var(--accent);
+}
+
+.error-message {
+    color: var(--error-red);
+}
+
+.llm-response {
+    color: var(--foreground);
+    text-align: left;
+    white-space: pre-wrap; /* Preserve whitespace and allow wrapping */
+    flex-grow: 1;
+    /* Typewriter specific styles will be removed */
+    overflow: visible !important; /* Ensure text is not clipped */
+    white-space: normal !important; /* Allow normal wrapping */
+    border-right: none !important; /* Remove blinking cursor */
+    animation: none !important; /* Remove any animation */
+}
+
+/* Spinner CSS (individual spinner per button) */
+.spinner {
+    display: inline-block;
+    border: 4px solid rgba(0, 0, 0, 0.1); /* Darker, more subtle border for light theme */
+    border-radius: 50%;
+    border-top: 4px solid var(--primary-orange); /* Spinner color matches primary accent */
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.spinner[aria-hidden="false"] {
+    opacity: 1;
+}
+
+/* Keyframes for spinner */
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}

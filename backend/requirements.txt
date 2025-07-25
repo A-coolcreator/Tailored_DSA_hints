@@ -1,0 +1,4 @@
+functions-framework==3.*
+google-generativeai==0.7.0 # NEW: For direct API access
+python-dotenv==1.0.0 # NEW: For loading .env files
+Flask-Cors==4.0.1 # NEW: For handling CORS locally
