@@ -11,7 +11,7 @@
     <img src="https://placehold.co/80x80/FF8C00/FFFFFF?text=DSA" alt="LeetCode DSA Helper Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">LeetCode DSA Helper Chrome Extension</h3>
+  <h3 align="center">Tailored LeetCode DSA Hints Chrome Extension</h3>
 
   <p align="center">
     Your intelligent coding companion for Data Structures & Algorithms problems on LeetCode.
@@ -57,7 +57,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The LeetCode DSA Helper is a Chrome extension designed to assist users in solving Data Structures and Algorithms (DSA) problems on the LeetCode platform. It integrates directly into the LeetCode problem page, allowing users to request personalized hints and code reviews for their solution attempts. This tool aims to foster a deeper understanding of DSA concepts by providing guided assistance rather than direct answers, encouraging active problem-solving.
+The Tailored LeetCode DSA Hints provider is a Chrome extension designed to assist users in solving Data Structures and Algorithms (DSA) problems on the LeetCode platform. It integrates directly into the LeetCode problem page, allowing users to request personalized hints and code reviews for their solution attempts. This tool aims to foster a deeper understanding of DSA concepts by providing guided assistance rather than direct answers, encouraging active problem-solving.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
